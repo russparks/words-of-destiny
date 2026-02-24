@@ -1,0 +1,47 @@
+/* styles.css */
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(
+    135deg,
+    #1e1e2f,
+    #3a3a5e
+  ); /* Cool gradient background */
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+#sound-button {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* Circular button */
+  background: radial-gradient(circle, #ff3b3b, #e60000); /* Gradient red */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+#sound-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
