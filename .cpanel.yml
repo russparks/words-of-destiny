@@ -1,8 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/u726116940/public_html/words-of-destiny/
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp script.js $DEPLOYPATH
-    - /bin/cp styles.css $DEPLOYPATH
-    - /bin/cp -R sounds $DEPLOYPATH
