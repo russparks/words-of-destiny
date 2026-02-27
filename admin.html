@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Upload</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee:wght@400&family=Nunito:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <main class="admin-app">
+      <h1>Admin Upload</h1>
+      <form id="upload-form" class="upload-card">
+        <label for="title">Sound title</label>
+        <input id="title" name="title" type="text" maxlength="80" required />
+
+        <label for="audio">Audio file (&lt; 5MB, MP3 or M4A)</label>
+        <input
+          id="audio"
+          name="audio"
+          type="file"
+          accept=".mp3,.m4a,audio/mpeg,audio/mp4,audio/x-m4a"
+          required
+        />
+
+        <button type="submit">Upload</button>
+      </form>
+
+      <p id="message" class="message" aria-live="polite"></p>
+    </main>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

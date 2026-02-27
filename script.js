@@ -1,18 +1,33 @@
-// script.js
-
-// Preload audio files
-const sounds = [new Audio("sounds/hell-yeah.mp3"), new Audio("sounds/no-homo.mp3")];
-
 const button = document.getElementById("sound-button");
+let sounds = [];
 
-button.addEventListener("click", () => {
-  // Generate a random index between 0 and sounds.length - 1
+async function loadSounds() {
+  try {
+    const response = await fetch("/api/sounds");
+    if (!response.ok) {
+      throw new Error("Failed to fetch sounds");
+    }
+
+    const data = await response.json();
+    sounds = data.sounds.map((sound) => new Audio(sound.url));
+  } catch (error) {
+    console.error("Could not load sounds:", error);
+  }
+}
+
+button.addEventListener("click", async () => {
+  if (sounds.length === 0) {
+    await loadSounds();
+  }
+
+  if (sounds.length === 0) {
+    return;
+  }
+
   const randomIndex = Math.floor(Math.random() * sounds.length);
-
-  // Reset the audio in case it was played before (optional)
   sounds[randomIndex].pause();
   sounds[randomIndex].currentTime = 0;
-
-  // Play the randomly selected sound
   sounds[randomIndex].play();
 });
+
+loadSounds();
