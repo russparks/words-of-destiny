@@ -1,5 +1,10 @@
 const button = document.getElementById("sound-button");
 let sounds = [];
+const fallbackSoundPaths = [
+  "sounds/hell-yeah.mp3",
+  "sounds/no-homo.mp3",
+  "sounds/wobble-dong.m4a",
+];
 
 async function loadSounds() {
   try {
@@ -11,7 +16,8 @@ async function loadSounds() {
     const data = await response.json();
     sounds = data.sounds.map((sound) => new Audio(sound.url));
   } catch (error) {
-    console.error("Could not load sounds:", error);
+    sounds = fallbackSoundPaths.map((path) => new Audio(path));
+    console.warn("Using fallback sounds:", error);
   }
 }
 
