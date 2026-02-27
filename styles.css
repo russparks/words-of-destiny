@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -13,7 +17,7 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  padding: 1rem;
+  padding: 2rem 1.5rem;
   overflow-x: hidden;
   background: linear-gradient(135deg, #1e1e2f, #3a3a5e);
   font-family: "Montserrat", sans-serif;
@@ -21,22 +25,24 @@ body {
 }
 
 h1 {
-  margin: 0 0 2rem;
-  font-size: clamp(1.4rem, 8vw, 3rem);
+  width: 100%;
+  margin: 0 0 2.5rem;
+  font-size: clamp(1.2rem, 5.5vw, 2.5rem);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.25;
+  word-break: break-word;
 }
 
 #sound-button {
-  width: clamp(100px, 30vw, 140px);
-  height: clamp(100px, 30vw, 140px);
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   background: radial-gradient(circle, #ff3b3b, #e60000);
   color: #fff;
-  font-size: clamp(0.85rem, 4vw, 1rem);
+  font-size: 1rem;
   font-weight: bold;
   border: none;
   cursor: pointer;
@@ -55,4 +61,13 @@ h1 {
 
 #sound-button:active {
   transform: scale(0.95);
+}
+
+/* Tablet and up */
+@media (min-width: 600px) {
+  #sound-button {
+    width: 140px;
+    height: 140px;
+    font-size: 1.1rem;
+  }
 }
