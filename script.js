@@ -33,7 +33,9 @@ button.addEventListener("click", async () => {
   const randomIndex = Math.floor(Math.random() * sounds.length);
   sounds[randomIndex].pause();
   sounds[randomIndex].currentTime = 0;
-  sounds[randomIndex].play();
+  sounds[randomIndex].play().catch((err) => {
+    console.error("Audio playback failed:", err);
+  });
 });
 
 loadSounds();
