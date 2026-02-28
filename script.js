@@ -3,7 +3,6 @@ let sounds = [];
 const fallbackSoundPaths = [
   "sounds/hell-yeah.mp3",
   "sounds/no-homo.mp3",
-  "sounds/wobble-dong.m4a",
 ];
 
 async function loadSounds() {
